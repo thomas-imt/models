@@ -22,7 +22,7 @@ def if_cuda(if_true, if_false = []):
     return select({
         "@local_config_cuda//cuda:using_nvcc": if_true,
         "@local_config_cuda//cuda:using_clang": if_true,
-        "//conditions:default": if_false
+        "//conditions:default": if_true
     })
 
 def tf_copts():
